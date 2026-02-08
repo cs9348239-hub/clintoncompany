@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Staff Login | Clinton Companies and Holdings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f7fa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.login-box{
+    background:white;
+    padding:30px;
+    width:100%;
+    max-width:350px;
+    border-radius:8px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+input,button{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+button{
+    background:#0f5c3a;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+<h2>Staff Portal Login</h2>
+
+<input type="text" id="staffid" placeholder="Staff ID">
+<input type="password" id="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<p id="error" style="color:red;"></p>
+</div>
+
+<script>
+function login(){
+    var id = document.getElementById("staffid").value;
+    var pass = document.getElementById("password").value;
+
+    // DEMO CREDENTIALS
+    if(id === "staff001" && pass === "clinton123"){
+        window.location.href = "dashboard.html";
+    } 
+    else if(id === "ceo001" && pass === "ceo@clinton"){
+        window.location.href = "admin.html";
+    }
+    else{
+        document.getElementById("error").innerText = "Invalid ID or Password";
+    }
+}
+</script>
+
+</body>
+</html>
